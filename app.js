@@ -49,7 +49,10 @@ const startScript = async () => {
 
         await query(getAddPersonsQuery(persons));
     }
-    console.log('end');
+    
+    console.log('End');
+
+    client.end();
 };
 
 startScript();
