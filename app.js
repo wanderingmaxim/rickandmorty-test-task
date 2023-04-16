@@ -47,11 +47,7 @@ const startScript = async () => {
         const { nextPage: newNextPage, persons } = await getPersons(nextPage);
         nextPage = newNextPage;
 
-        const myQuery = getAddPersonsQuery(persons);
-
-        console.log(myQuery.slice(9670, 9690));
-
-        await query(myQuery);
+        await query(getAddPersonsQuery(persons));
     }
     console.log('end');
 };
