@@ -1,5 +1,7 @@
 const getSqlInsertElementForPerson = (person) => {
-    return `(${person.id}, '${person.name}', '${JSON.stringify(person.data)}')`;
+    const { id, name, ...data } = person;
+
+    return `(${id}, '${name.replaceAll("'", '')}', '${JSON.stringify(data).replaceAll("'", '')}')`;;
 };
 
 const getSqlInsertElementsForPersons = (persons) => {
@@ -18,4 +20,4 @@ const getAddPersonsQuery = (persons) => {
     `;
 };
 
-export { getAddPersonsQuery };
+module.exports = { getAddPersonsQuery };

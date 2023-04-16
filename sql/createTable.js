@@ -1,5 +1,5 @@
 const getCreateTableQuery = () => {
-    const query = `CREATE TABLE (
+    const query = `CREATE TABLE persons (
         id serial,
         name text,
         data jsonb
@@ -8,4 +8,4 @@ const getCreateTableQuery = () => {
     return query;
 };
 
-export { getCreateTableQuery };
+module.exports = { getCreateTableQuery };
